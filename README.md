@@ -4,6 +4,8 @@ _A Little Puppet Open Source Ecosystem Using Vagrant, Borrowing from binford2k's
 
 Puppetverse provides a small, virtual Puppet lab you can deploy using [VirtualBox][] and [Vagrant][]. After installing VirtualBox and Vagrant, you can clone this repository, `cd` into its directory, and issue the command `vagrant up` to set up and provision a working puppet master (`master`) and two agents (`arrakis` and `caladan`). 
 
+It's o.k., but it's also just a few hours' work hacking on someone else's thing to suit my Debianesque proclivities.
+
 ## Setting Up
 
 You need VirtualBox and Vagrant. 
@@ -41,6 +43,16 @@ Once you're logged in, passwordless `sudo` is available, e.g.
 
 `$ vagrant ssh caladan`  
 `$ sudo puppet agent -t`
+
+#### Halting vs. Destroying
+
+- Done with your environment, but want to keep your changes and power down your VMs? `$ vagrant halt`
+- Done with your environment, and want to destroy your changes and start fresh? `$ vagrant destroy`
+
+Individual nodes can be halted or destroyed by naming them:
+
+`$ vagrant halt arrakis`  
+`$ vagrant destroy arrakis`
 
 #### Changes to the Puppet Environment
 
