@@ -12,11 +12,11 @@ node default {
   # to track the latest version, change the resource
   # attribute to ensure => latest.
   #######################################################
-  $pkgs = ["emacs23-nox"]
+ # $pkgs = ["emacs23-nox"]
 
-  package { $pkgs:
-    ensure => present,
-  }
+#  package { $pkgs:
+#    ensure => present,
+#  }
 
 }
 

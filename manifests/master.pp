@@ -63,6 +63,11 @@ class puppetmaster {
     key_server => 'pgp.mit.edu',
   }
 
+  file { '/etc/hiera.yaml':
+    ensure => link,
+    target => "/etc/puppet/hieradata/hiera.yaml",
+    require => Package['puppetmaster'],
+    }
 }
 
 include puppetmaster
