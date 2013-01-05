@@ -29,6 +29,8 @@ You can clone this project with the following command:
 `$ cd puppetverse`  
 `$ vagrant up`
 
+Wiser people than me have recommended using native NFS mounts for the shared directories, so be ready with your password, which is required to modify the NFS `exports` file. If you don't like this, you can open `Vagrantfile` and remove all the occurrences of `:nfs => true`, which will cause puppetverse to use native Virtualbox mounts. 
+
 ## Using
 
 ### Getting Around
