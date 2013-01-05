@@ -29,8 +29,6 @@ You can clone this project with the following command:
 `$ cd puppetverse`  
 `$ vagrant up`
 
-Wiser people than me have recommended using native NFS mounts for the shared directories, so be ready with your password, which is required to modify the NFS `exports` file. If you don't like this, you can open `Vagrantfile` and remove all the occurrences of `:nfs => true`, which will cause puppetverse to use native Virtualbox mounts. 
-
 ## Using
 
 ### Getting Around
@@ -51,7 +49,7 @@ Once you're logged in, passwordless `sudo` is available, e.g.
 - Done with your environment, but want to keep your changes and power down your VMs? `$ vagrant halt`
 - Done with your environment, and want to destroy your changes and start fresh? `$ vagrant destroy`
 
-Individual nodes can be halted or destroyed by naming them:
+Individual nodes can be halted or destroyed by entering their names after the `halt` or `destroy` arguments:
 
 `$ vagrant halt arrakis`  
 `$ vagrant destroy arrakis`
@@ -74,9 +72,9 @@ For now, if you decide to change the `site.pp` manifest on the `master` node, yo
 
 ## TODO
 
-- Put the `/etc/puppet` tree in a mounted directory so it can be manipulated from outside the VM without having to reprovision.
+- Separate the "vagrant provisions" part from the "puppet master stands on its own hind legs" part and put the `/etc/puppet` tree in a mounted directory so it can be manipulated from outside the VM without having to reprovision.
 - Do more with templates so it's easier to fiddle with the network address, host names, etc. 
-- Make one agent a "production" node, one a "dev" node. 
+- Make NFS mounts easier to use for the bits where all the nodes are spun up and independent of Vagrant's bootstrap/provision sequence. 
 
 
 [VirtualBox]: http://virtualbox.com

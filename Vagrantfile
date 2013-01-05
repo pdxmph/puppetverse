@@ -11,8 +11,8 @@ Vagrant::Config.run do |config|
     config.vm.box_url = "http://files.vagrantup.com/precise64.box"
     mconfig.vm.host_name = "puppetmaster.vagrant.lan"
     mconfig.vm.network :hostonly, "192.168.33.10"
-    mconfig.vm.share_folder('modules', '/tmp/vagrant-puppet/modules', 'modules', :nfs => true)
-    mconfig.vm.share_folder('files', '/tmp/vagrant-puppet/files', 'files', :nfs => true)
+    mconfig.vm.share_folder('modules', '/tmp/vagrant-puppet/modules', 'modules')
+    mconfig.vm.share_folder('files', '/tmp/vagrant-puppet/files', 'files')
     mconfig.vm.customize ["modifyvm", :id, "--memory", 1024]
 
     mconfig.vm.provision :puppet do |puppet|
@@ -26,8 +26,8 @@ end
       config.vm.box_url = "http://files.vagrantup.com/precise64.box"
       mconfig.vm.host_name = "#{agent.to_s}.vagrant.lan"
       mconfig.vm.provision :puppet, :options => ["--modulepath", "/tmp/vagrant-puppet/modules"]
-      mconfig.vm.share_folder('modules', '/tmp/vagrant-puppet/modules', 'modules', :nfs => true)
-      mconfig.vm.share_folder('files', '/tmp/vagrant-puppet/files', 'files', :nfs => true)
+      mconfig.vm.share_folder('modules', '/tmp/vagrant-puppet/modules', 'modules')
+      mconfig.vm.share_folder('files', '/tmp/vagrant-puppet/files', 'files')
       mconfig.vm.customize ["modifyvm", :id, "--memory", 512]
       mconfig.vm.network :hostonly, ip_address
       mconfig.vm.provision :puppet_server do |puppet|
