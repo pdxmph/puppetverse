@@ -79,10 +79,10 @@ A few things you might or might not want to attend to before using:
 
 ## TODO
 
+- Make modules dir portable
 - Separate the "vagrant provisions" part from the "puppet master stands on its own hind legs" part and put the `/etc/puppet` tree in a mounted directory so it can be manipulated from outside the VM without having to reprovision.
 - Do more with templates so it's easier to fiddle with the network address, host names, etc. 
-- Make NFS mounts easier to use for the bits where all the nodes are spun up and independent of Vagrant's bootstrap/provision sequence. 
-
+- Make NFS mounts make sense for the bits where all the nodes are spun up and independent of Vagrant's bootstrap/provision sequence. 
 
 [VirtualBox]: http://virtualbox.com
 [Vagrant]: http://vagrantup.com
