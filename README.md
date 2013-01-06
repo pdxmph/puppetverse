@@ -27,6 +27,7 @@ You can clone this project with the following command:
 ## Running
 
 `$ cd puppetverse`
+
 `$ vagrant up`
 
 ## Using
@@ -42,6 +43,7 @@ If you don't customize anything, the following commands will log you in to each 
 Once you're logged in, passwordless `sudo` is available, e.g.
 
 `$ vagrant ssh caladan`
+
 `$ sudo puppet agent -t`
 
 #### Halting vs. Destroying
@@ -53,7 +55,9 @@ Once you're logged in, passwordless `sudo` is available, e.g.
 Individual nodes can be halted (shut down), suspended (paused), or destroyed (reset to their initial status before you modified them) by entering their names after the `halt`, `suspend`, or `destroy` arguments:
 
 `$ vagrant halt arrakis`
+
 `$ vagrant destroy arrakis`
+
 `$ vagrant suspend arrakis`
 
 #### Changes to the Puppet Environment
