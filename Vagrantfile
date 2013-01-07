@@ -11,9 +11,10 @@ Vagrant::Config.run do |config|
     mconfig.vm.box_url = box_url
     mconfig.vm.host_name = "puppetmaster.vagrant.lan"
     mconfig.vm.network :hostonly, "192.168.33.10"
-    mconfig.vm.share_folder('modules', '/tmp/vagrant-puppet/modules', 'modules')
+    mconfig.vm.share_folder('up_modules', '/tmp/vagrant-puppet/modules', 'modules')
     mconfig.vm.share_folder('files', '/tmp/vagrant-puppet/files', 'files')
     mconfig.vm.share_folder('hiera', '/etc/puppet/hieradata', 'files/master/hiera')
+    mconfig.vm.share_folder('modules', '/etc/puppet/modules', 'files/master/modules')
     mconfig.vm.customize ["modifyvm", :id, "--memory", 1024]
 
     mconfig.vm.provision :puppet do |puppet|
