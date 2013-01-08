@@ -1,2 +1,6 @@
 ---
 os_message: "Welcome, Ubuntu Host"
+ntp::servers:
+  - "fee"
+  - "fi"
+  - "fo"
