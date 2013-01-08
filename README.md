@@ -26,9 +26,11 @@ You can clone this project with the following command:
 
 ## Running
 
-`$ cd puppetverse`
+`$ cd puppetverse`  
 
-`$ vagrant up`
+`$ vagrant up`  
+
+If you'd prefer to bring up a single agent without the others, pass the agent name(s) as arguments to `vagrant up`, e.g. `vagrant up master` or `vagrant up master arrakis`
 
 ## Using
 
