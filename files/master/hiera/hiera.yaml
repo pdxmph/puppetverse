@@ -4,6 +4,7 @@
 :yaml:
   :datadir: /etc/puppet/hieradata
 :hierarchy:
+  - %{::fqdn}
   - %{::operatingsystem}
   - %{::environment}
   - common
