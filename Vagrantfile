@@ -3,7 +3,7 @@
 
 box = 'precise'
 box_url = 'http://files.vagrantup.com/precise64.box'
-puppet_agents = {:arrakis => "192.168.33.11", :caladan => "192.168.33.12"}
+puppet_agents = {:arrakis => "192.168.33.11"}
 
 Vagrant::Config.run do |config|
   config.vm.define :master do |mconfig|

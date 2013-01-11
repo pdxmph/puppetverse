@@ -6,6 +6,8 @@ node default {
     content => "Welcome to ${::hostname}. This is a Puppet managed node in a Vagrant cluster.\n",
   }
 
+class { hiera_sample: }
+
 class { ntp:
   ensure     => running,
   autoupdate => true,
