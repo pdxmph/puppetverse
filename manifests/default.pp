@@ -1,6 +1,6 @@
-class puppetmaster {
+class puppetagent {
   $puppetmaster_ip = '192.168.33.10'
-  $packages = ['puppet', 'puppet-common', 'facter']
+  $packages = ['puppet', 'puppet-common', 'facter', 'hiera']
 
   File {
     owner  => 'root',
@@ -8,23 +8,31 @@ class puppetmaster {
     mode   => '0644',
   }
 
- apt::source { 'puppetlabs':
+apt::source { 'puppetlabs':
     location   => 'http://apt.puppetlabs.com',
     repos      =>  'main',
     key        => '4BD6EC30',
     key_server => 'pgp.mit.edu',
   }
 
-  exec { 'update':
-    command => 'apt-get update',
-    path => '/usr/bin',
+  exec { "update":
+    command => "apt-get update",
+    path => "/usr/bin",
     require => Apt::Source['puppetlabs'],
-  }
+    }
 
   package { $packages:
-    ensure => present,
+    ensure => latest,
     require => Exec['update'],
+    before => Service['puppet'],
   }
+
+ service { 'puppet':
+    ensure  => running,
+    enable  => true,
+    require => File['puppet.conf'],
+  }
+
 
   file { 'puppet.conf':
     ensure => file,
@@ -39,5 +47,4 @@ class puppetmaster {
   }
 }
 
-include puppetmaster
-
+include puppetagent
