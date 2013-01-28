@@ -1,1 +1,0 @@
-include hiera_sample
