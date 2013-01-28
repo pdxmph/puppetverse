@@ -24,13 +24,6 @@ apt::source { 'puppetlabs':
   package { $packages:
     ensure => latest,
     require => Exec['update'],
-    before => Service['puppet'],
-  }
-
- service { 'puppet':
-    ensure  => running,
-    enable  => true,
-    require => File['puppet.conf'],
   }
 
 
