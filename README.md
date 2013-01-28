@@ -77,14 +77,14 @@ For now, if you decide to change the `site.pp` manifest on the `master` node, yo
   - `manifests/default.pp`
 - __Host names__: By default, you get `master`, `caladan` and `arrakis`. You can change the agent names by editing the `puppet_agents` array in `Vagrantfile`.
 - __Base Box__: The base box is an Ubuntu/Precise VM provided by the Vagrant project. You can change the base box by editing the `box` and `box_url` variables in `Vagrantfile`.
-- __RAM__: The master is configured to use 1024MB of RAM, the agents are configured to use 256MB of RAM. Look for `mconfig.vm.customize ["modifyvm", :id, "--memory", 1024]` in `Vagrantfile` to change this.
+- __RAM__: The master is configured to use 1024MB of RAM, the agents are configured to use 512MB of RAM. Look for `mconfig.vm.customize ["modifyvm", :id, "--memory", 1024]` in `Vagrantfile` to change this.
 
 ### Peculiarities
 
 A few things you might or might not want to attend to before using:
 
 - puppetverse makes sure it has the Puppet apt repository set up and upon `vagrant up` it will make sure it has the very newest version of Puppet Open Source (running an `apt-get update` during the provisioning phase). If you peek into `/manifests/master.pp` and remove the `apt::source` and "update" `exec`, provisioning will speed up a little, but you'll get Puppet 2.7 (if you keep the default box, which is Ubuntu Precise).
-- puppetverse reflects my current interest in Hiera, so it's configured to put Hiera configuration data in Vagrant's `files/master/hiera` directory, where it's easier to work with in one place out in the host operating system.  It also symlinks  `/etc/puppet/hieradata/hiera.yaml` to `/etc/hiera.yaml`, removing the step of passing a `--configuration` argument to `hiera` if you're using it on the command line.
+
 
 ## TODO
 
