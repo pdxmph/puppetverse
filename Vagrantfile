@@ -14,6 +14,7 @@ Vagrant::Config.run do |config|
     mconfig.vm.share_folder('up_files', '/tmp/vagrant-puppet/files', 'files/up_files')
     mconfig.vm.share_folder('up_modules', '/tmp/vagrant-puppet/up_modules', 'files/up_modules')
     mconfig.vm.share_folder('modules', '/etc/puppet/modules', 'files/master/modules')
+    mconfig.vm.share_folder('hiera', '/etc/puppet/hiera', 'files/master/hiera')
     mconfig.vm.share_folder('master_manifests', '/etc/puppet/manifests', 'files/master/manifests')
   
     mconfig.vm.customize ["modifyvm", :id, "--memory", 1024]

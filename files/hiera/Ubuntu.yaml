@@ -1,0 +1,5 @@
+---
+ntp::servers:
+  - "fee.ntp.org"
+  - "fi.ntp.org"
+  - "fo.ntp.org"
