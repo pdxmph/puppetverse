@@ -1,0 +1,12 @@
+---
+classes:
+  - hiera_sample
+  
+ntp::servers:
+  - "ntpwest1.acme.com"
+  - "ntpwest2.acme.com"
+  - "ntpwest3.acme.com"
+
+hiera_sample::special_episode: "This is a very %{::fqdn} message."
+hiera_sample::message: "Hello Hiera World"
+hiera_sample::domain: "Hello, %{::fqdn}, from Hiera."

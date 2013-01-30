@@ -51,7 +51,7 @@ apt::source { 'puppetlabs':
 
   file { '/etc/hiera.yaml':
     ensure => link,
-    target => "/etc/puppet/hieradata/hiera.yaml",
+    target => "/etc/puppet/hiera/hiera.yaml",
     before => Service['puppetmaster'],
     }
 }
