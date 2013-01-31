@@ -6,14 +6,14 @@ class puppetmaster {
   }
 
   $confdir = '/etc/puppet'
+  $packages = ['puppetmaster','puppetmaster-common','puppet', 'puppet-common']
 
-
-apt::source { 'puppetlabs':
-    location   => 'http://apt.puppetlabs.com',
-    repos      =>  'main',
-    key        => '4BD6EC30',
-    key_server => 'pgp.mit.edu',
-  }
+  apt::source { 'puppetlabs':
+      location   => 'http://apt.puppetlabs.com',
+      repos      =>  'main',
+      key        => '4BD6EC30',
+      key_server => 'pgp.mit.edu',
+    }
 
   exec { "update":
     command => "apt-get update",
@@ -21,7 +21,8 @@ apt::source { 'puppetlabs':
     require => Apt::Source['puppetlabs'],
     }
 
-  package { ['puppet-common','puppet','puppetmaster','puppetmaster-common']:
+
+  package { $packages:
     ensure => latest,
     require => Exec['update'],
     before => Service['puppetmaster'],

@@ -8,6 +8,6 @@ node default {
 
   include hiera_sample
 
- # include ntp
+  #include ntp
 }
 

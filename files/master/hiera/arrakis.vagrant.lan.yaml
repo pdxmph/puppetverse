@@ -1,7 +1,4 @@
 ---
-classes:
-  - hiera_sample
-  
 ntp::servers:
   - "ntpwest1.acme.com"
   - "ntpwest2.acme.com"
