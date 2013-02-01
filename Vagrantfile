@@ -16,7 +16,7 @@ Vagrant::Config.run do |config|
     mconfig.vm.share_folder('modules', '/etc/puppet/modules', 'files/master/modules')
     mconfig.vm.share_folder('master_manifests', '/etc/puppet/manifests', 'files/master/manifests')
   
-    mconfig.vm.customize ["modifyvm", :id, "--memory", 1024]
+    mconfig.vm.customize ["modifyvm", :id, "--memory", 512]
 
     mconfig.vm.provision :puppet do |puppet|
       puppet.options = ["--modulepath", "/tmp/vagrant-puppet/up_modules"]
@@ -30,14 +30,10 @@ end
       mconfig.vm.host_name = "#{agent.to_s}.vagrant.lan"
       mconfig.vm.share_folder('up_files', '/tmp/vagrant-puppet/files', 'files/up_files')
       mconfig.vm.share_folder('up_modules', '/tmp/vagrant-puppet/up_modules', 'files/up_modules')
-      mconfig.vm.customize ["modifyvm", :id, "--memory", 512]
+      mconfig.vm.customize ["modifyvm", :id, "--memory", 256]
       mconfig.vm.network :hostonly, ip_address
       mconfig.vm.provision :puppet, :options => ["--modulepath", "/tmp/vagrant-puppet/up_modules"]
-      
-      mconfig.vm.provision :puppet_server do |puppet|
-        puppet.puppet_server = "192.168.33.10"
-        puppet.puppet_node = "#{agent.to_s}.vagrant.lan"
-      end
+    
     end
   end
 end
