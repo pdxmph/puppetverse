@@ -1,8 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-box = 'precise'
-box_url = 'http://files.vagrantup.com/precise64.box'
+box = 'precise_puppet'
+box_url = 'http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-1204-x64.box'
 puppet_agents = {:arrakis => "192.168.33.11", :caladan => "192.168.33.12"}
 
 Vagrant::Config.run do |config|
