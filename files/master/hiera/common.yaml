@@ -1,5 +1,21 @@
 ---
-os_message: "Welcome, Non-Ubuntu Host"
+hiera_sample::os_message: "Welcome, Non-Ubuntu Host"
 hiera_sample::special_episode: "This is a very %{::fqdn} message."
 hiera_sample::message: "Hello Hiera World"
 hiera_sample::domain: "Hello, %{::fqdn}, from Hiera."
+
+hiera::hashval: 
+  val1: common-fee
+  val2: common-fi
+  val3: common-fo
+  val4: common-fum
+  
+video_games:
+  - hunt the wumpus
+  - pac man
+  - donkey kong
+  
+hashvalues: 
+  val1: common-fee
+  val2: common-fi
+  val3: common-fo

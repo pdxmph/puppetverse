@@ -4,6 +4,22 @@ ntp::servers:
   - "ntpwest2.acme.com"
   - "ntpwest3.acme.com"
 
-hiera_sample::special_episode: "This is a very %{::fqdn} message."
+hiera_sample::special_episode: "This is a very %{::fqdn}-specific message."
 hiera_sample::message: "Hello Hiera World"
 hiera_sample::domain: "Hello, %{::fqdn}, from Hiera."
+hiera_sample::hashval: 
+  val1: arrakis-fee
+  val2: arrakis-fi
+  val3: arrakis-fo
+
+hiera_sample::os_message: "Welcome, Fremen Host"
+
+video_games:
+  - hunt the sandwormpus
+  - frem-man
+  - sandtroutkong
+  
+hashvalues: 
+  val1: arrakis-fee
+  val2: arrakis-fi
+  val3: arrakis-fo

@@ -1,10 +1,16 @@
 node default {
   notify { "Hello ${::hostname}!": }
 
-  file { '/etc/motd':
+file { '/etc/motd':
     ensure  => file,
     content => "Welcome to ${::hostname}. This is a Puppet-managed node in a Vagrant cluster.\n",
   }
-  include hiera_sample
+
+#  include hiera_sample
+
+  $video_games = hiera_hash(hashvalues)
+
+  notify { $video_games:}
+
 }
 
