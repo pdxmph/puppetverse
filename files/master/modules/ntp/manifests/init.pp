@@ -76,7 +76,7 @@ class ntp($servers='UNSET',
                           '1.centos.pool.ntp.org',
                           '2.centos.pool.ntp.org', ]
       } else {
-        $servers_real = $servers
+        $servers_real = hiera_array($servers,'modules.ntpserver.org')
       }
     }
     freebsd: {
@@ -91,7 +91,7 @@ class ntp($servers='UNSET',
                           '2.freebsd.pool.ntp.org iburst maxpoll 9',
                           '3.freebsd.pool.ntp.org iburst maxpoll 9', ]
       } else {
-        $servers_real = $servers
+        $servers_real = hiera_array($servers,'modules.ntpserver.org')
       }
     }
     default: {

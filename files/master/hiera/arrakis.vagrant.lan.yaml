@@ -1,16 +1,19 @@
----
-ntp::servers:
-  - "ntpwest1.acme.com"
-  - "ntpwest2.acme.com"
-  - "ntpwest3.acme.com"
+# hiera_sample::servers:
+#   - "ntpwest1.arrakis.com"
+#   - "ntpwest2.arrakis.com"
+#   - "ntpwest3.arrakis.com"
 
-hiera_sample::special_episode: "This is a very %{::fqdn}-specific message."
+hiera_sample::hashvalues: 
+  val1: "arrakis-val1"
+  val2: "arrakis-val2"
+  val3: "arrakis-val3"
+
+  
+hiera_sample::special_episode: "This is a very Arrakis-specific message."
 hiera_sample::message: "Hello Hiera World"
 hiera_sample::domain: "Hello, %{::fqdn}, from Hiera."
-hiera_sample::hashval: 
-  val1: arrakis-fee
-  val2: arrakis-fi
-  val3: arrakis-fo
+
+
 
 hiera_sample::os_message: "Welcome, Fremen Host"
 
@@ -19,7 +22,3 @@ video_games:
   - frem-man
   - sandtroutkong
   
-hashvalues: 
-  val1: arrakis-fee
-  val2: arrakis-fi
-  val3: arrakis-fo
