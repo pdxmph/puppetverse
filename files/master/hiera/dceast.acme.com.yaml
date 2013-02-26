@@ -1,0 +1,9 @@
+# hiera_sample::servers:
+#   - "ntpwest1.acme.com"
+#   - "ntpwest2.acme.com"
+#   - "ntpwest3.acme.com"
+#   
+# hiera_sample::hashvalues: 
+#   val1: "dceast-val1"
+#   val2: "dceast-val2"
+# #  val3: "dceast-val3"  
