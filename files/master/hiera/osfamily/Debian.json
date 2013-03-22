@@ -1,13 +1,13 @@
-{
-   "hiera_sample::special_episode" : "This is a very %{::fqdn} message for Debian hosts.",
-   "hiera_sample::message" :  "Hello Hiera World from a Debian Host",
-   "hiera_sample::domain" : "Hello, %{::fqdn}, from Hiera via a Debian Host.",
+{   
    "ntp::pkg_name" : "ntp",
    "ntp::svc_name" : "ntp",
    "ntp::config"   : "/etc/ntp.conf",
    "ntp::config_tpl" : "ntp.conf.debian.erb",
-   "ntp::supported" : true
+   "ntp::supported" : true,
+   "ntp::servers" : [
+       "0.debian.pool.ntp.org iburst",
+       "1.debian.pool.ntp.org iburst",
+       "2.debian.pool.ntp.org iburst",
+       "3.debian.pool.ntp.org iburst"
+       ]
 }
-
-
-
