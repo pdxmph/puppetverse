@@ -1,9 +1,0 @@
----
-ntp::servers:
-  - "fee.ntp.org"
-  - "fi.ntp.org"
-  - "fo.ntp.org"
-  
-hiera_sample::special_episode: "This is a very %{::fqdn} message."
-hiera_sample::message: "Hello Hiera World"
-hiera_sample::domain: "Hello, %{::fqdn}, from Hiera."

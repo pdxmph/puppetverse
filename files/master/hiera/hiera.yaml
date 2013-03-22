@@ -1,10 +1,10 @@
 ---
 :backends:
-  - yaml
-:yaml:
+  - json
+:json:
   :datadir: /etc/puppet/hiera
 :hierarchy:
-  - %{::fqdn}
-  - %{::operatingsystem}
-  - %{::environment}
+  - node/%{::fqdn}
+  - role/%{::role}
+  - osfamily/%{::osfamily}
   - common

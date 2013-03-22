@@ -1,0 +1,15 @@
+{
+    "hiera_sample::os_message" : "Welcome, Non-Ubuntu Host",
+    "hiera_sample::special_episode" : "This is a very generic message sent to %{::fqdn}.",
+    "hiera_sample::message" : "Hello Hiera World",
+    "hiera_sample::domain" : "Hello, %{::fqdn}, from Hiera.",
+    
+    "hiera_sample::servers" : [
+	"ntpwest1.common.com",
+	"ntpwest2.common.com",
+	"ntpwest3.common.com"
+    ]
+}
+
+  
+  
