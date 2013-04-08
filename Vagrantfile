@@ -3,7 +3,7 @@
 
 box = 'precise_puppet'
 box_url = 'http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-1204-x64.box'
-puppet_agents = {:arrakis => "192.168.33.11", :caladan => "192.168.33.12"}
+puppet_agents = {:kermit => "192.168.33.11", :grover => "192.168.33.12"}
 
 Vagrant::Config.run do |config|
   config.vm.define :master do |mconfig|

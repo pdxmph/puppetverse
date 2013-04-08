@@ -5,6 +5,6 @@
   :datadir: /etc/puppet/hiera
 :hierarchy:
   - node/%{::fqdn}
-  - role/%{::role}
+  - virtual/%{::virtual}
   - osfamily/%{::osfamily}
   - common

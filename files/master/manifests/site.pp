@@ -1,5 +1,10 @@
-node default {
-  #include hiera_sample
-  #include ntp
-}
 hiera_include('classes')
+
+node default {
+
+}
+
+# node "kermit.vagrant.lan", "grover.vagrant.lan", "snuffie.vagrant.lan" {
+#   class { "ntp": }
+# }
+

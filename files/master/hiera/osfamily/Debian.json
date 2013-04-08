@@ -1,20 +1,3 @@
 {  
-   "classes" : "ntp",
-   "ntp::pkg_name" : "ntp",
-   "ntp::svc_name" : "ntp",
-   "ntp::config"   : "/etc/ntp.conf",
-   "ntp::config_tpl" : "ntp.conf.debian.erb",
-   "ntp::supported" : true,
-   "ntp::restrict" : true,
-   "ntp::autoupdate" : true,
-   "ntp::ensure" : "running",
-   "ntp::enable" : true,
-   "ntp::ensure" : "running",
-   "ntp::package_ensure" : "latest",
-   "ntp::servers" : [
-       "0.debian.pool.ntp.org iburst",
-       "1.debian.pool.ntp.org iburst",
-       "2.debian.pool.ntp.org iburst",
-       "3.debian.pool.ntp.org iburst"
-       ]
+    "vmwaretools::working_dir" : "/usr/local/vmware"
 }
